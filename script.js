@@ -1,3 +1,9 @@
+window.onload = function() {
+  home();
+};
+
+
+
 function home() {
     fetch("http://localhost:8080/last-release")
       .then(response => response.json())
@@ -26,6 +32,12 @@ function home() {
           card.classList.add("mb-3");
           card.style.width = "300px"; 
           card.style.height = "250px";
+
+          card.addEventListener("click", () => {
+            window.location.href = "video.html?episode="+item.link;
+            
+
+          });
       
 
           const img = document.createElement("img");
